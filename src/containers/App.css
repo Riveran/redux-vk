@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  background-color: #282c34;
+  border: solid red 1px;
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 200px;
+}
