@@ -1,21 +1,22 @@
 import React, { Component } from 'react'
-import './App.css'
+import '../index.css'
 import { connect } from 'react-redux'
-import Page from '../components/Page'
-import User from '../components/User'
+import { Page } from '../components/Page'
+import { User } from '../components/User'
+import { getPhotos } from '../actions/PageActions'
 
 class App extends Component {
   render () {
-    const { user, page } = this.props
+    const { user, page, setYearAction } = this.props
     return (
-      <div className='App'>
-        <div>
-          <h3>Мой топ фото</h3>
-          <Page year={page.year} photos={page.photos} />
-        </div>
-        <div>
-          <User name={user.name} />
-        </div>
+      <div className='app'>
+        <Page
+          photos={page.photos}
+          year={page.year}
+          getPhotos={setYearAction}
+          isFetching={page.isFetching}
+        />
+        <User name={user.name} />
       </div>
     )
   }
@@ -29,4 +30,13 @@ const mapStateToProps = store => {
   }
 }
 
-export default connect(mapStateToProps)(App)
+const mapDispatchToProps = dispatch => {
+  return {
+    setYearAction: year => dispatch(getPhotos(year))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)

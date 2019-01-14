@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import '../index.css'
 
-export default class User extends Component {
+export class User extends Component {
   render () {
     const { name } = this.props
     return (
-      <div>
+      <div className='ib user'>
         <p>Привет, {name}</p>
       </div>
     )
