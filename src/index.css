@@ -86,7 +86,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-
+/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -103,6 +103,8 @@ section {
 body {
   line-height: 1;
   font-family: sans-serif;
+  color: white;
+  background-color: #282c34;
 }
 ol,
 ul {
@@ -111,10 +113,6 @@ ul {
 blockquote,
 q {
   quotes: none;
-}
-body {
-  background-color: #282c34;
-  color: white;
 }
 blockquote:before,
 blockquote:after,
@@ -127,6 +125,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+/*end reset*/
 
 h3 {
   font-size: 22px;
@@ -167,4 +167,12 @@ h3 {
 }
 .btn:hover {
   background-color: #6d8cb0;
+}
+.photo {
+  display: inline-block;
+  margin: 10px 2px;
+  width: 130px;
+}
+.error {
+  color: #ff0000;
 }
